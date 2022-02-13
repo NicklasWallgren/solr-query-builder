@@ -1,0 +1,70 @@
+task javadocJar(type: Jar) {
+    from javadoc.destinationDir
+    classifier = 'javadoc'
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.delombokTask
+    classifier = 'sources'
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "ossrh"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = findProperty('ossrhUsername')
+                password = findProperty('ossrhPassword')
+            }
+        }
+//        maven {
+//            name = "ossrhSnapshot"
+//            url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+//            credentials {
+//                username = findProperty('ossrhUsername')
+//                password = findProperty('ossrhPassword')
+//            }
+//        }
+    }
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+
+            pom {
+                name = 'Solr Query Builder'
+                artifactId = 'solr-query-builder'
+                packaging = 'jar'
+                description = 'An Apache Solr Query Builder for writing Solr queries'
+                url = 'https://github.com/NicklasWallgren/solr-query-builder'
+
+                scm {
+                    connection = 'scm:git:git://github.com/NicklasWallgren/solr-query-builder.git'
+                    developerConnection = 'scm:git:ssh://github.com/NicklasWallgren/solr-query-builder.git'
+                    url = 'https://github.com/NicklasWallgren/solr-query-builder'
+                }
+
+                licenses {
+                    license {
+                        name = 'MIT Licence'
+                        url = 'https://github.com/NicklasWallgren/solr-query-builder/blob/master/LICENSE'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'nicklas'
+                        name = 'NicklasWallgren'
+                        email = 'nicklas.wallgren@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}

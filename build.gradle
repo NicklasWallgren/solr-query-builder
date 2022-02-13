@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id "io.freefair.lombok" version "6.0.0-m2"
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+    id "com.github.spotbugs" version "4.7.2"
+    id "net.ltgt.errorprone" version "2.0.2"
+    id 'checkstyle'
+    id 'maven-publish'
+    id 'signing'
+    id 'jacoco'
+}
+
+group 'dev.nicklasw'
+version '0.10.0'
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.9'
+
+    compileOnly 'com.github.spotbugs:spotbugs-annotations:4.5.3'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+
+    errorprone 'com.google.errorprone:error_prone_core:2.8.1'
+}
+
+apply from: "gradle/publish.gradle"
+apply from: "gradle/check.gradle"
+apply from: "gradle/javadoc.gradle"
+
+shadowJar {
+    classifier = ''
+    relocate 'org.apache.commons:commons-lang3', 'shadow.org.apache.commons:commons-lang3'
+}

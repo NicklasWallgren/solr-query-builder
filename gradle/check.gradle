@@ -1,0 +1,46 @@
+test {
+    useJUnitPlatform()
+}
+
+spotbugs {
+    toolVersion = '4.3.0'
+}
+
+spotbugsMain {
+    reports {
+        html {
+            enabled = true
+            destination = file("$buildDir/reports/spotbugs/main/spotbugs.html")
+            stylesheet = 'fancy-hist.xsl'
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Werror"
+    options.errorprone.enabled = true
+    options.errorprone {
+        disableWarningsInGeneratedCode = true
+        ignoreUnknownCheckNames = false
+        allErrorsAsWarnings = false
+        // workaround for: https://github.com/google/error-prone/issues/780
+        errorproneArgs = [
+                '-Xep:UnusedVariable:OFF', // https://github.com/google/error-prone/issues/1266
+                '-Xep:UnusedMethod:OFF', // https://github.com/google/error-prone/issues/1266
+                '-Xep:MissingOverride:OFF',
+                '-Xep:JavaTimeDefaultTimeZone:OFF',
+                '-Xep:SameNameButDifferent:OFF',
+                '-Xep:MissingSummary:OFF', // Until https://github.com/projectlombok/lombok/issues/2730
+                '-Xlint:deprecation',
+        ]
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+check.dependsOn jacocoTestReport

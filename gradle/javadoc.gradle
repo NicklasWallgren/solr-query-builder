@@ -1,0 +1,9 @@
+javadoc {
+    exclude "**/lombok.config"
+    dependsOn delombok
+    failOnError = false
+}
+
+delombok {
+    modulePath.from sourceSets.main.compileClasspath
+}
