@@ -62,7 +62,8 @@ final Criteria criteria = Criteria.where("title").expression("a title")
     .or(where("title").regexp(".*title.*")).must()
     .connect()
     .or(where("title").expression("should not match").mustNot());
-    
+ 
+QueryParser.createQueryFor(criteria)  
 >>> +(title:a title AND (quantity:[0 TO 100] AND episodeTitle:"a title"~^1.5) OR title:/.*title.*/) OR -title:should not match    
 ```
 
