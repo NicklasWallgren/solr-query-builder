@@ -1,0 +1,6 @@
+module:dev.nicklasw.query.builder
+dev.nicklasw.query.builder
+dev.nicklasw.query.builder.fields
+dev.nicklasw.query.builder.parser
+dev.nicklasw.query.builder.parser.converter
+dev.nicklasw.query.builder.parser.processors
