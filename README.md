@@ -4,12 +4,12 @@
 
 # Solr Query Builder
 
-An Apache Solr Query Builder for writing Solr queries. It supports parts of [The standard Query Parser](https://solr.apache.org/guide/7_2/the-standard-query-parser.html)
+An Apache Solr Query Builder for writing Solr queries. It supports parts of [The standard Query Parser](https://solr.apache.org/guide/7_2/the-standard-query-parser.html). 
 More features are to be added.
 
 There are some [examples that may be useful](./examples).
 
-This library is heavily influenced by `spring-data-solr`, but adds additional functionality and boolean Operators. 
+This library is heavily influenced by `spring-data-solr`, but adds additional functionality and Boolean Operators. 
 
 ## Documentation
 See the project's [Javadoc](https://nicklaswallgren.github.io/solr-query-builder/).
