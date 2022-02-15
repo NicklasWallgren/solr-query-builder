@@ -3,7 +3,9 @@ package dev.nicklasw.solr.query.builder.parser;
 import dev.nicklasw.solr.query.builder.Criteria;
 import dev.nicklasw.solr.query.builder.Criteria.Occur;
 import dev.nicklasw.solr.query.builder.Node;
+import dev.nicklasw.solr.query.builder.fields.Field;
 import dev.nicklasw.solr.query.builder.parser.processors.BasePredicateProcessor;
+import edu.umd.cs.findbugs.annotations.Nullable;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
@@ -52,7 +54,7 @@ public class QueryParser {
         final StringBuilder queryFragment = new StringBuilder();
         final boolean singeEntryCriteria = (part.getPredicates().size() == 1);
 
-        String fieldName = part.getField().getName();
+        String fieldName = getNullsafeFieldName(part.getField());
         if (part.getOccur() != Occur.SHOULD) {
             fieldName = part.getOccur() + fieldName;
         }
@@ -83,6 +85,14 @@ public class QueryParser {
         }
 
         return queryFragment.toString();
+    }
+
+    private static String getNullsafeFieldName(@Nullable final Field field) {
+        if (field == null || field.getName() == null) {
+            return "";
+        }
+
+        return field.getName();
     }
 
 }

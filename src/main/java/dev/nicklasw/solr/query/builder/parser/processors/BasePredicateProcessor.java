@@ -23,7 +23,7 @@ public abstract class BasePredicateProcessor implements PredicateProcessor {
         "\\(", "\\)", "\\{", "\\}", "\\[", "\\]", "\\^", "\\~", "\\*", "\\?", "\\:", "\\\\"};
 
 
-    private static final ConverterProcessor converterProcessor = new ConverterProcessor();
+    private static final ConverterProcessor CONVERTER_PROCESSOR = new ConverterProcessor();
 
     @Override
     public Object process(final Predicate predicate, final Field field) {
@@ -36,7 +36,7 @@ public abstract class BasePredicateProcessor implements PredicateProcessor {
 
     protected Object filterCriteriaValue(final Object criteriaValue) {
         if (!(criteriaValue instanceof String)) {
-            return converterProcessor.convert(criteriaValue, String.class);
+            return CONVERTER_PROCESSOR.convert(criteriaValue, String.class);
         }
 
         final String value = escapeCriteriaValue((String) criteriaValue);

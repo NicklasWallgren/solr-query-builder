@@ -8,11 +8,10 @@ import dev.nicklasw.solr.query.builder.fields.Field;
 import dev.nicklasw.solr.query.builder.fields.SimpleField;
 import dev.nicklasw.solr.query.builder.parser.Predicate;
 import edu.umd.cs.findbugs.annotations.Nullable;
-import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@NoArgsConstructor
 public class Criteria extends Node {
 
     public static final String WILDCARD = "*";
