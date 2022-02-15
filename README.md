@@ -54,8 +54,8 @@ comments at a maximum of 120 characters of length and code at 120.
 ## General Usage
 
 ```java 
-import static dev.nicklasw.query.builder.Criteria.where;
-import dev.nicklasw.query.builder.parser.QueryParser;
+import static dev.nicklasw.solr.query.builder.Criteria.where;
+import dev.nicklasw.solr.query.builder.parser.QueryParser;
 
 final Criteria criteria = Criteria.where("title").expression("a title")
     .and(where("quantity").between(0, 100).and(where("episodeTitle").fuzzy("a title").boost(1.5f)))

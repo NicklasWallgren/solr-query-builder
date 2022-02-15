@@ -1,4 +1,4 @@
-package dev.nicklasw.query.builder.parser.converter;
+package dev.nicklasw.solr.query.builder.parser.converter;
 
 import java.util.ArrayList;
 import java.util.List;

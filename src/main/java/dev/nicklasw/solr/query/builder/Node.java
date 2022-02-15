@@ -1,7 +1,7 @@
-package dev.nicklasw.query.builder;
+package dev.nicklasw.solr.query.builder;
 
-import static dev.nicklasw.query.builder.Criteria.Occur;
-import static dev.nicklasw.query.builder.Criteria.Operator;
+import static dev.nicklasw.solr.query.builder.Criteria.Occur;
+import static dev.nicklasw.solr.query.builder.Criteria.Operator;
 
 import java.util.ArrayList;
 import java.util.Collections;

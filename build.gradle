@@ -11,7 +11,7 @@ plugins {
 }
 
 group 'dev.nicklasw'
-version '0.10.0'
+version '0.10.0-SNAPSHOT'
 
 sourceCompatibility = 16
 targetCompatibility = 16
@@ -37,5 +37,11 @@ apply from: "gradle/javadoc.gradle"
 
 shadowJar {
     classifier = ''
-    relocate 'org.apache.commons:commons-lang3', 'shadow.org.apache.commons:commons-lang3'
+    relocate 'org.apache.commons', 'shadow.org.apache.commons'
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes('Automatic-Module-Name': 'dev.nicklasw.solr.query.builder')
+    }
 }

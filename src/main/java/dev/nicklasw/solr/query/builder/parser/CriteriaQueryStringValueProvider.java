@@ -1,16 +1,16 @@
-package dev.nicklasw.query.builder.parser;
+package dev.nicklasw.solr.query.builder.parser;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import dev.nicklasw.query.builder.Criteria;
-import dev.nicklasw.query.builder.parser.processors.BetweenProcessor;
-import dev.nicklasw.query.builder.parser.processors.DefaultProcessor;
-import dev.nicklasw.query.builder.parser.processors.ExpressionProcessor;
-import dev.nicklasw.query.builder.parser.processors.FuzzyProcessor;
-import dev.nicklasw.query.builder.parser.processors.PredicateProcessor;
-import dev.nicklasw.query.builder.parser.processors.RegularExpressionProcessor;
+import dev.nicklasw.solr.query.builder.Criteria;
+import dev.nicklasw.solr.query.builder.parser.processors.BetweenProcessor;
+import dev.nicklasw.solr.query.builder.parser.processors.DefaultProcessor;
+import dev.nicklasw.solr.query.builder.parser.processors.ExpressionProcessor;
+import dev.nicklasw.solr.query.builder.parser.processors.FuzzyProcessor;
+import dev.nicklasw.solr.query.builder.parser.processors.PredicateProcessor;
+import dev.nicklasw.solr.query.builder.parser.processors.RegularExpressionProcessor;
 import edu.umd.cs.findbugs.annotations.Nullable;
 
 class CriteriaQueryStringValueProvider implements Iterator<String> {

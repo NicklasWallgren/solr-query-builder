@@ -1,7 +1,6 @@
-package dev.nicklasw.query.builder.parser;
+package dev.nicklasw.solr.query.builder.parser;
 
-import dev.nicklasw.query.builder.Criteria;
-import edu.umd.cs.findbugs.annotations.Nullable;
+import dev.nicklasw.solr.query.builder.Criteria;
 
 public class Predicate {
 

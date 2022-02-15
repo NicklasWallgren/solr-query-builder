@@ -1,8 +1,8 @@
-package dev.nicklasw.query.builder.parser.processors;
+package dev.nicklasw.solr.query.builder.parser.processors;
 
-import dev.nicklasw.query.builder.Criteria.OperationKey;
-import dev.nicklasw.query.builder.fields.Field;
-import dev.nicklasw.query.builder.parser.Predicate;
+import dev.nicklasw.solr.query.builder.Criteria.OperationKey;
+import dev.nicklasw.solr.query.builder.fields.Field;
+import dev.nicklasw.solr.query.builder.parser.Predicate;
 import edu.umd.cs.findbugs.annotations.Nullable;
 
 public class FuzzyProcessor extends BasePredicateProcessor {

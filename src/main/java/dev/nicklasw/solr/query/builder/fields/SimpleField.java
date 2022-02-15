@@ -1,4 +1,4 @@
-package dev.nicklasw.query.builder.fields;
+package dev.nicklasw.solr.query.builder.fields;
 
 import java.util.Objects;
 

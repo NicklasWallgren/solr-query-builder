@@ -1,9 +1,8 @@
-package dev.nicklasw.query.builder.parser.processors;
+package dev.nicklasw.solr.query.builder.parser.processors;
 
-import dev.nicklasw.query.builder.Criteria.OperationKey;
-import dev.nicklasw.query.builder.fields.Field;
-import dev.nicklasw.query.builder.parser.Predicate;
-import dev.nicklasw.query.builder.Criteria;
+import dev.nicklasw.solr.query.builder.fields.Field;
+import dev.nicklasw.solr.query.builder.parser.Predicate;
+import dev.nicklasw.solr.query.builder.Criteria;
 import edu.umd.cs.findbugs.annotations.Nullable;
 
 public class BetweenProcessor extends BasePredicateProcessor {
@@ -12,7 +11,7 @@ public class BetweenProcessor extends BasePredicateProcessor {
 
     @Override
     public boolean canProcess(@Nullable final Predicate predicate) {
-        return predicate != null && OperationKey.BETWEEN.getKey().equals(predicate.getKey());
+        return predicate != null && Criteria.OperationKey.BETWEEN.getKey().equals(predicate.getKey());
     }
 
     @Override

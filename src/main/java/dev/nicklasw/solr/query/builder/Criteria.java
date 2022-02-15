@@ -1,12 +1,12 @@
-package dev.nicklasw.query.builder;
+package dev.nicklasw.solr.query.builder;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import dev.nicklasw.query.builder.fields.Field;
-import dev.nicklasw.query.builder.fields.SimpleField;
-import dev.nicklasw.query.builder.parser.Predicate;
+import dev.nicklasw.solr.query.builder.fields.Field;
+import dev.nicklasw.solr.query.builder.fields.SimpleField;
+import dev.nicklasw.solr.query.builder.parser.Predicate;
 import edu.umd.cs.findbugs.annotations.Nullable;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

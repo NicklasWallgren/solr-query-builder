@@ -1,4 +1,4 @@
-package dev.nicklasw.query.builder.parser.converter;
+package dev.nicklasw.solr.query.builder.parser.converter;
 
 import edu.umd.cs.findbugs.annotations.Nullable;
 

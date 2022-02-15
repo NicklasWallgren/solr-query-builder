@@ -1,9 +1,9 @@
-package dev.nicklasw.query.builder.parser;
+package dev.nicklasw.solr.query.builder.parser;
 
-import dev.nicklasw.query.builder.Criteria;
-import dev.nicklasw.query.builder.Criteria.Occur;
-import dev.nicklasw.query.builder.Node;
-import dev.nicklasw.query.builder.parser.processors.BasePredicateProcessor;
+import dev.nicklasw.solr.query.builder.Criteria;
+import dev.nicklasw.solr.query.builder.Criteria.Occur;
+import dev.nicklasw.solr.query.builder.Node;
+import dev.nicklasw.solr.query.builder.parser.processors.BasePredicateProcessor;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;

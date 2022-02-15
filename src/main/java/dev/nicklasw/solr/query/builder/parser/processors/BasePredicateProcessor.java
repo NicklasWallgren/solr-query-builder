@@ -1,10 +1,10 @@
-package dev.nicklasw.query.builder.parser.processors;
+package dev.nicklasw.solr.query.builder.parser.processors;
 
 import java.util.Set;
 
-import dev.nicklasw.query.builder.fields.Field;
-import dev.nicklasw.query.builder.parser.Predicate;
-import dev.nicklasw.query.builder.parser.converter.ConverterProcessor;
+import dev.nicklasw.solr.query.builder.fields.Field;
+import dev.nicklasw.solr.query.builder.parser.Predicate;
+import dev.nicklasw.solr.query.builder.parser.converter.ConverterProcessor;
 import edu.umd.cs.findbugs.annotations.Nullable;
 import org.apache.commons.lang3.StringUtils;
 
