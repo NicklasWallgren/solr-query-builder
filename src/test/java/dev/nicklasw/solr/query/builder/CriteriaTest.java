@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 
 class CriteriaTest {
 
-    // TODO, to be implemented in next release
-
     @Test
     void test() {
         final Criteria criteria = Criteria.where("title").expression("a title")
@@ -22,7 +20,5 @@ class CriteriaTest {
 
         Assertions.assertEquals(expected, QueryParser.createQueryFor(criteria));
     }
-
-
 
 }
