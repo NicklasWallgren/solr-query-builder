@@ -1,6 +1,6 @@
 [![Continuous Integration](https://github.com/nicklaswallgren/solr-query-builder/workflows/ci/badge.svg)](https://github.com/nicklaswallgren/solr-query-builder/actions)
 [![License](https://img.shields.io/github/license/nicklaswallgren/solr-query-builder)](https://github.com/nicklaswallgren/solr-query-builder/blob/master/LICENSE)
-[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/NicklasWallgren/solr-query-builder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/NicklasWallgren/solr-query-builder/context:java)
+[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/NicklasWallgren/solr-query-builder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/NicklasWallgren/solr-query-builder/alerts/)
 
 # Solr Query Builder
 
@@ -32,7 +32,7 @@ The artifact is available through Maven Central via Sonatype.
 ### Gradle
 
 ```
-implementation 'dev.nicklasw:solr-query-builder:0.0.0'
+implementation 'dev.nicklasw:solr-query-builder:0.10.0'
 ```
 
 ## Changelog

@@ -10,20 +10,14 @@ task sourcesJar(type: Jar) {
 
 publishing {
     repositories {
-//        maven {
-//            name = "ossrh"
-//            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-//            credentials {
-//                username = findProperty('ossrhUsername')
-//                password = findProperty('ossrhPassword')
-//            }
-//        }
+        // "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+
         maven {
-            name = "ossrhSnapshot"
-            url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+            name = "ossrh"
+            url = System.getenv("OSSRH_URL")
             credentials {
-                username = findProperty('ossrhUsername')
-                password = findProperty('ossrhPassword')
+                username = System.getenv("OSSRH_USERNAME")
+                password = System.getenv("OSSRH_PASSWORD")
             }
         }
     }
